@@ -2,7 +2,20 @@
 
 **Malicious OAuth Application Hunter for Microsoft Entra ID**
 
-Scan your tenant for known malicious OAuth applications using threat intelligence from [EntraProtect.io](https://www.entraprotect.io).
+EntraHunt is a PowerShell-based threat hunting tool designed to detect malicious OAuth applications lurking in your Microsoft Entra ID (Azure AD) tenant. It leverages curated threat intelligence from [EntraProtect.io](https://www.entraprotect.io) to identify known malicious apps that attackers use for Business Email Compromise (BEC), credential theft, MFA bypass, and persistent access.
+
+## Why EntraHunt?
+
+OAuth consent phishing is one of the most dangerous attack vectors in cloud environments. Attackers trick users into granting permissions to malicious applications, which then:
+
+- **Exfiltrate mailbox data** using apps like PERFECTDATA SOFTWARE and Mail_Backup
+- **Bypass MFA** through adversary-in-the-middle phishing kits (Tycoon 2FA)
+- **Maintain persistent access** via third-party email clients
+- **Conduct APT campaigns** like COZY BEAR (APT29) targeting high-value organizations
+
+Traditional security tools often miss these threats because the apps operate with legitimate OAuth tokens. EntraHunt fills this gap by comparing your tenant's applications against a continuously updated database of known malicious app signatures.
+
+![EntraHunt Demo](images/discovery.gif)
 
 ---
 
@@ -71,6 +84,8 @@ The script is fully interactive. Just run it and follow the prompts.
 EntraHunt/
 ├── EntraHunt.ps1              # Main entry point
 ├── README.md
+├── images/
+│   └── discovery.gif          # Demo animation
 ├── data/
 │   └── threats.json           # Threat database (JSON)
 ├── modules/
