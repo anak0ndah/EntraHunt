@@ -1,0 +1,349 @@
+[
+    {
+        "ApplicationId": "ff8d92dc-3d82-41d6-bcbd-b9174d163620",
+        "Name": "PERFECTDATA SOFTWARE",
+        "Categories": [
+            "bec",
+            "exfiltration"
+        ],
+        "Impact": "critical",
+        "Description": "Known malicious application used in BEC campaigns. Performs complete mailbox backup and export operations.",
+        "AttackMethod": "Performs comprehensive mailbox exfiltration. All mailbox data should be considered compromised when this application is detected.",
+        "Scopes": [
+            "Mail.Read",
+            "Contacts.Read",
+            "EWS.AccessAsUser.All"
+        ]
+    },
+    {
+        "ApplicationId": "2ef68ccc-8a4d-42ff-ae88-2d7bb89ad139",
+        "Name": "Mail_Backup",
+        "Categories": [
+            "bec",
+            "exfiltration"
+        ],
+        "Impact": "critical",
+        "Description": "Evolved version of PERFECTDATA SOFTWARE. Updated infrastructure for mailbox export operations.",
+        "AttackMethod": "Comprehensive mailbox exfiltration using Graph API. All mailbox data compromised when detected.",
+        "Scopes": [
+            "User.Read",
+            "Mail.Read",
+            "MailboxFolder.Read",
+            "Contacts.Read",
+            "Calendars.Read",
+            "MailboxSettings.Read",
+            "Mail.ReadWrite",
+            "MailboxFolder.ReadWrite",
+            "openid",
+            "profile",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "854189f9-4c71-44bb-9880-dd0c2f75922a",
+        "Name": "iLSMART",
+        "Categories": [
+            "mfa-bypass",
+            "phishing"
+        ],
+        "Impact": "critical",
+        "Description": "Malicious decoy deployed by Tycoon 2FA phishing kit. Intercepts authentication session cookies.",
+        "AttackMethod": "AiTM attack via reverse proxy between victim and Microsoft login. Captures passwords, MFA codes, and session cookies.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Send",
+            "MailboxSettings.ReadWrite"
+        ]
+    },
+    {
+        "ApplicationId": "fc45d3d0-d870-4c83-b3f7-08ebca61d3a0",
+        "Name": "COZY BEAR OAuth Redirect App",
+        "Categories": [
+            "apt-campaign",
+            "credential-theft"
+        ],
+        "Impact": "critical",
+        "Description": "Malicious Azure application created by COZY BEAR (APT29). Single-tenant app hosted in attacker tenant.",
+        "AttackMethod": "Silent redirect via prompt=none to adversary infrastructure. Detection indicates direct targeting by Russian SVR.",
+        "Scopes": [
+            "openid",
+            "offline_access",
+            "profile"
+        ],
+        "ThreatActor": {
+            "Name": "COZY BEAR (APT29)",
+            "Attribution": "Russia - SVR",
+            "Confidence": "Moderate"
+        }
+    },
+    {
+        "ApplicationId": "e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd",
+        "Name": "eM Client",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email client frequently abused in consent phishing attacks for mailbox synchronization.",
+        "AttackMethod": "Establishes persistent access through offline_access scope. Enables complete mailbox synchronization to external systems.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "62db40a4-2c7e-4373-a609-eda138798962",
+        "Name": "Nine - Email & Calendar",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email client offering full synchronization with offline access capabilities.",
+        "AttackMethod": "Provides complete mailbox access with persistent token refresh. Used to maintain long-term access to compromised accounts.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "a245e8c0-b53c-4b67-9b45-751d1dff8e6b",
+        "Name": "TypeApp - Mail & Calendar",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email application known to be abused for persistent email access in phishing campaigns.",
+        "AttackMethod": "Enables complete mailbox synchronization with persistent access tokens for ongoing data exfiltration.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "4761b959-9780-4c2d-87a3-512b4638f767",
+        "Name": "Edison Mail",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email app that processes email content externally. Used in consent phishing attacks.",
+        "AttackMethod": "Processes and analyzes email content externally. Persistent access enables ongoing data collection.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "77468577-4f6e-40e7-b745-11d3d0c28095",
+        "Name": "Fastmail",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email service that establishes persistent access to corporate mailboxes.",
+        "AttackMethod": "Establishes long-term persistent access while enabling continuous data exfiltration via offline_access scope.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "179d5108-412b-4c95-8e34-06786784ab39",
+        "Name": "PostBox",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Third-party email client with comprehensive synchronization capabilities used in phishing attacks.",
+        "AttackMethod": "Provides complete email synchronization infrastructure with persistent token access for mailbox exfiltration.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "946c777c-bc85-489e-b034-392389ae23d6",
+        "Name": "Spike",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Email client with conversational interface. Used by threat actors for rapid mailbox content analysis.",
+        "AttackMethod": "Restructures email content for rapid analysis. Facilitates quick mailbox review and identification of sensitive communications.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "8c59ead7-d703-4a27-9e55-c96a0054c8d2",
+        "Name": "BlueMail",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Email client that processes email through external servers. Known to be abused in attacks.",
+        "AttackMethod": "Routes email through external infrastructure enabling interception and persistent access.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Send",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "19db86c3-b2b9-44cc-b339-36da233a3be2",
+        "Name": "Mailspring",
+        "Categories": [
+            "bec",
+            "exfiltration",
+            "persistence"
+        ],
+        "Impact": "high",
+        "Description": "Open-source email client with tracking capabilities. Used in consent phishing campaigns.",
+        "AttackMethod": "Provides tracking and analytics on email communications. External sync enables data collection.",
+        "Scopes": [
+            "Mail.ReadWrite",
+            "Mail.Read",
+            "Calendars.ReadWrite",
+            "Contacts.ReadWrite",
+            "openid",
+            "profile",
+            "email",
+            "offline_access"
+        ]
+    },
+    {
+        "ApplicationId": "a43e5392-f48b-46a4-a0f1-098b5eeb4757",
+        "Name": "ZoomInfo",
+        "Categories": [
+            "data-harvesting"
+        ],
+        "Impact": "medium",
+        "Description": "Business intelligence platform that harvests organizational contact and relationship data.",
+        "AttackMethod": "Harvests organizational contact databases and professional relationship data for external aggregation.",
+        "Scopes": [
+            "User.Read",
+            "openid",
+            "Contacts.Read",
+            "Mail.Read",
+            "User.ReadBasic.All",
+            "email",
+            "offline_access",
+            "profile"
+        ]
+    },
+    {
+        "ApplicationId": "858d7e42-35f0-44b7-9033-df309239a47f",
+        "Name": "ZoomInfo Credentials",
+        "Categories": [
+            "data-harvesting"
+        ],
+        "Impact": "medium",
+        "Description": "Credential component of ZoomInfo integration for data collection.",
+        "AttackMethod": "Collects user credentials and profile data for external intelligence gathering operations.",
+        "Scopes": [
+            "User.Read",
+            "openid",
+            "email",
+            "profile"
+        ]
+    },
+    {
+        "ApplicationId": "497ac034-5120-4c1a-929a-0351f5c09918",
+        "Name": "ZoomInfo Communitiez Login",
+        "Categories": [
+            "data-harvesting"
+        ],
+        "Impact": "medium",
+        "Description": "Community-focused variant of ZoomInfo integration for data collection.",
+        "AttackMethod": "Harvests organizational contact databases and professional relationship graphs for external aggregation.",
+        "Scopes": [
+            "User.Read",
+            "openid",
+            "Contacts.Read",
+            "Mail.Read",
+            "User.ReadBasic.All",
+            "email",
+            "offline_access",
+            "profile",
+            "MailboxSettings.Read"
+        ]
+    },
+    {
+        "ApplicationId": "caffae8c-0882-4c81-9a27-d1803af53a40",
+        "Name": "SigParser",
+        "Categories": [
+            "data-harvesting"
+        ],
+        "Impact": "medium",
+        "Description": "Contact extraction tool that processes email signatures. May facilitate social engineering.",
+        "AttackMethod": "Scans email content and signatures to extract contact details. Provides intelligence for social engineering attacks.",
+        "Scopes": [
+            "Calendars.Read",
+            "Contacts.Read",
+            "GroupMember.Read.All",
+            "Mail.Read",
+            "User.Read.All",
+            "Contacts.ReadWrite"
+        ]
+    }
+]

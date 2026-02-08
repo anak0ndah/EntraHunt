@@ -1,0 +1,19 @@
+# Reports generated
+reports/
+
+# PowerShell logs
+*.log
+
+# Backup files
+*.backup
+
+# IDE
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
